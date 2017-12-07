@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
+
+$color-white: #fff
+$color-green: #16a085
+$color-ivory: #f5f6f7
+$color-light-grey: #f5f6f7
+$color-graphite: #373737
+$color-light-green: #1abc9c
+$color-black: #000000
+
+=fonts($size, $weight)
+    font-size: $size
+    font-weight: $weight
+
+=button($color-background, $color, $radius)
+    background-color: $color-background
+    color: $color
+    border-radius: $radius
+
+
+*
+    box-sizing: border-box
+    font-family: "Nunito", sans-serif
+
+.row:before,
+.row:after 
+    content: " "
+    display: table 
+.row:after
+    clear: both
+
+.jumbotron
+    background-image: url("https://i.imgur.com/VYi0BKH.png")
+    height: 100vh
+    background-position: 50% 100% 
+    background-size: cover
+    background-repeat: no-repeat
+    color: $color-white
+    position: relative 
+    top: 0
+    margin: 0
+    .navbar
+        text-align: center
+        #white-camara
+            display: none
+        .nav
+            float: none
+            padding: 0 auto
+            display: inline-block
+            a
+                text-decoration: none
+                +fonts(16px, 700)
+                color: $color-white
+                &:hover
+                    background-color: transparent !important
+                    border: 2px solid $color-white
+    .layer h1
+        +fonts(36px, 700)
+        padding-top: 4rem
+    .layer h3
+        +fonts(16px, 500)
+    .layer button
+        background-color: $color-green
+        +fonts(12px, 700)
+        height: 40px
+        width: 130px
+    .layer .icons
+        font-size: 24px
+
+
+
+.simple-photo
+    min-height: 70vh
+    background-color: $color-ivory
+    position: relative
+    .row
+        padding: 0
+        .text-cont
+            padding-top: 4rem
+            padding-left: 4rem
+            h3
+                +fonts(18px, 700)
+                color: $color-green
+            p
+                shape-outside: polygon(0% 0%, 100% 0%, 50% 100%)
+                +fonts(14px, 400)
+                line-height: 24px
+                color: $color-graphite
+            button
+                +button($color-green, $color-white, 0px)
+                +fonts(12px, 700)
+        .picture-container
+            min-height: 70vh
+            img
+                position: absolute
+                display: block
+                bottom: 0
+                right: 5
+        
+.design
+    min-height: 80vh
+    #carousel-1
+        min-height: 80vh
+        .carousel-indicators li
+            border: 1px solid $color-graphite
+        .carousel-indicators .active
+            background-color: $color-graphite
+        .row
+            min-height: 80vh
+            .phone-container
+                min-height: 80vh
+                position: relative
+                .green-phone
+                    position: absolute
+                    left: 100px
+                    display: block
+                    bottom: -200px
+            h2 
+                +fonts(18px, 700)
+                color: $color-green
+                padding-top: 4em
+            p
+                +fonts(14px, 400)
+                line-height: 22px
+                color: $color-graphite
+            button
+                +button($color-green, $color-white, 0px)
+                +fonts(12px, 700)
+        
+
+
+
+.community
+    background-color: $color-light-grey
+    .controls
+        float: right
+        a
+            color: $color-black
+            font-size: 32px
+    .our-community
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        padding-top: 8rem
+        img
+            display: block
+    .item img
+        padding-top: 4rem
+        padding-bottom: 4rem
+        margin: 0 auto
+
+
+
+.subscribe
+    background-image: url("https://i.imgur.com/5IbiP2T.png")
+    height: 100vh
+    background-position: 50% 80%
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    flex-wrap: wrap
+    h1
+        +fonts(24px, 700)
+        color: $color-white
+    .input-group
+        width: 160px
+        border: hidden
+        color: $color-graphite
+        .btn
+            background-color: $color-green
+            color: $color-white
+
+
+.download 
+    background-color: $color-ivory
+    min-height: 50vh
+    h3
+        color: $color-graphite
+        +fonts(20px, 700)
+        padding-top: 4rem
+    p
+        color: $color-graphite
+        +fonts(14px, 500)
+        line-height: 22px
+        padding: 1% 18% 3% 15%
+    .apple 
+        float: right
+    .btn-group
+        padding: 20px
+        color: $color-white
+        +fonts(18px, 700)
+        border-radius: 3px 
+        button:first-child
+            background-color: $color-light-green
+            width: 150px
+        button:nth-child(2)
+            background-color: $color-green
+    
+
+footer
+    min-height: 20vh
+    color: $color-graphite
+    .row
+        padding-left: 50px
+        padding-right: 50px
+        padding-top: 5vh
+        h4
+            +fonts(14px, 700)
+            span 
+                color: $color-green
+        img 
+            display: block
+            float: right
+
+@media (max-width: 992px)
+
+    .download .row
+        text-align: center
+        .apple
+            float: none
+    
+    .picture-container img
+        right: 0
+
+    .green-phone
+        max-height: 600px 
+
+   
+
+@media (max-width: 768px) 
+
+    .jumbotron .navbar
+        #white-camara
+            display: block
+            margin: 0 auto
+        #white-camara2
+            display: none
+        li:nth-child(3)
+            height: 0
+
+    .simple-photo 
+        min-height: 40vh
+        .text-cont
+            text-align: center
+            padding: 1rem !important
+            padding-top: 2rem
+        .picture-container 
+            display: none
+    
+    .phone-container
+        text-align: center !important
+        .green-phone
+            position: relative !important
+            bottom: 0 !important
+            left: 0 !important
+            padding-top: 30px
+            margin: 0 auto !important
+            max-height: 450px
+    
+    .text-container
+        text-align: center
+        h2
+            padding-top: 1rem
+
+    .community 
+        .controls
+            display: block
+            float: none
+            margin: 0 auto
+            text-align: center
+        .our-community
+            padding-top: 3rem
+        .row #carousel-2 img
+            display: block
+            float: none
+            margin: 0 auto
+
+    footer .row
+        text-align: center
+        img 
+            float: none
+            margin: 0 auto
+            padding: 20px
